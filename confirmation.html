@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Confirmation - Newsletter</title>
+</head>
+<body>
+
+  <section class="confirm">
+    <div class="card" style="background-color: white;">
+      <img class="img2" src="assets/images/icon-success.svg" alt="">
+      <h2>Thanks for <br> subscribing!</h2>
+      <p> A confirmation email has been sent to 
+        <span class="response" id="userEmail"></span>.
+        Please open it and click the button inside to confirm your subscription.
+      </p>
+
+      <div class="btn"><button class="btn2" onclick="dismiss()">Dismiss message</button></div>
+    </div>
+  </section>
+
+  <script>
+    // Recupera o e-mail armazenado no localStorage
+    const email = localStorage.getItem('userEmail');
+
+    // Exibe o e-mail no span com id 'userEmail'
+    document.getElementById('userEmail').textContent = email;
+
+    // Função para remover o e-mail e voltar à página principal
+    function dismiss() {
+      localStorage.removeItem('userEmail');
+      window.location.href = 'index.html';
+    }
+  </script>
+
+</body>
+</html>

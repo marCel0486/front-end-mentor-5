@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
+  
+  <title>Frontend Mentor | Newsletter sign-up form with success message</title>
+
+ 
+</head>
+<body>
+
+  <!-- Sign-up form start -->
+
+  <!-- Sign-up form start -->
+<main>
+  <section>
+    <div class="content">
+      <h1>Stay updated!</h1>
+      <span>Join 60,000+ product managers receiving monthly updates on:</span>
+      <ul>
+        <li>Product discovery and building what matters</li>
+        <li>Measuring to ensure updates are a success</li>
+        <li>And much more!</li>
+      </ul>
+
+      <label for="email"><strong>Email address</strong></label>
+      <br>
+      <input id="email" type="email" placeholder="email@company.com" required>
+      <br>
+      <button onclick="saveEmail()">Subscribe to monthly newsletter</button>
+    </div>
+
+    <div class="image">
+      <img src="assets/images/illustration-sign-up-desktop.svg" alt="">
+    </div>
+  </section>
+</main>
+
+<script>
+  function saveEmail() {
+    // Pega o valor do input de e-mail
+    const email = document.getElementById('email').value;
+
+    // Verifica se o campo de e-mail não está vazio
+    if (email) {
+      // Armazena o e-mail no localStorage
+      localStorage.setItem('userEmail', email);
+
+      // Redireciona para a página de confirmação
+      window.location.href = 'confirmation.html';
+    } else {
+      alert('Please enter a valid email address.');
+    }
+  }
+</script>
+
+
+  <script src="script.js"></script>
+</body>
+</html>
